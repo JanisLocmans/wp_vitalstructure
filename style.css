@@ -10,50 +10,45 @@ Tags: something
 Text Domain: vitalstructure
 */
 
-/**
- * Table of Contents
- * 1.0 - Reset
- */
 
 
 /**
  * 1.0 - Reset
+ * 2.0 - Rebuild
+ * 3.0 - Header
+ *		3.1 - Navigation Bar/Buttons
+ *		3.2 - Logo
+ *		3.3 - Banner
+ * 4.0 - Content
  */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
-	border: 0;
-	font-family: inherit;
-	font-size: 100%;
-	font-style: inherit;
-	font-weight: inherit;
-	margin: 0;
-	outline: 0;
-	padding: 0;
-	vertical-align: baseline;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
-
 html {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	font-size: 62.5%;
-	overflow-y: scroll;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
+    font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+    overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+    -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+    -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
-
-*,
-*:before,
-*:after {
-	-webkit-box-sizing: inherit;
-	-moz-box-sizing: inherit;
-	box-sizing: inherit;
-}
-
 body {
-	background: #f1f1f1;
+    background: #fff;
 }
-
 article,
 aside,
 details,
@@ -61,59 +56,444 @@ figcaption,
 figure,
 footer,
 header,
-main,
+hgroup,
 nav,
 section {
-	display: block;
+    display: block;
 }
-
-ol,
-ul {
-	list-style: none;
+ol, ul {
+    list-style: none;
 }
-
-table {
-	border-collapse: separate;
-	border-spacing: 0;
+table { /* tables still need 'cellspacing="0"' in the markup */
+    border-collapse: separate;
+    border-spacing: 0;
 }
-
-caption,
-th,
-td {
-	font-weight: normal;
-	text-align: left;
+caption, th, td {
+    font-weight: normal;
+    text-align: left;
 }
-
-fieldset {
-	min-width: inherit;
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
 }
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
+blockquote, q {
+    quotes: "" "";
 }
-
-blockquote,
-q {
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-	quotes: none;
-}
-
 a:focus {
-	outline: 2px solid #c1c1c1;
-	outline: 2px solid rgba(51, 51, 51, 0.3);
+    outline: thin dotted;
 }
-
 a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+    outline: 0;
+}
+a img {
+    border: 0;
+}
+/**
+ * 2.0 - Rebuild CSS
+ */
+body,
+button,
+input,
+select,
+textarea {
+    color: #404040;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+ 
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+    clear: both;
+}
+hr {
+    background-color: #ccc;
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em;
+}
+ 
+/* Text elements */
+p {
+    margin-bottom: 1.5em;
+}
+ul, ol {
+    margin: 0 0 1.5em 3em;
+}
+ul {
+    list-style: disc;
+}
+ol {
+    list-style: decimal;
+}
+ul ul, ol ol, ul ol, ol ul {
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+dt {
+    font-weight: bold;
+}
+dd {
+    margin: 0 1.5em 1.5em;
+}
+b, strong {
+    font-weight: bold;
+}
+dfn, cite, em, i {
+    font-style: italic;
+}
+blockquote {
+    margin: 0 1.5em;
+}
+address {
+    margin: 0 0 1.5em;
+}
+pre {
+    background: #eee;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    padding: 1.6em;
+    overflow: auto;
+    max-width: 100%;
+}
+code, kbd, tt, var {
+    font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+mark, ins {
+    background: #fff9c0;
+    text-decoration: none;
+}
+sup,
+sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    bottom: 1ex;
+}
+sub {
+    top: .5ex;
+}
+small {
+    font-size: 75%;
+}
+big {
+    font-size: 125%;
+}
+figure {
+    margin: 0;
+}
+table {
+    margin: 0 0 1.5em;
+    width: 100%;
+}
+th {
+    font-weight: bold;
+}
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* Corrects font size not being inherited in all browsers */
+    margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+    vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+    *vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+button,
+input {
+    line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+    *overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    border: 1px solid #ccc;
+    border-color: #ccc #ccc #bbb #ccc;
+    border-radius: 3px;
+    background: #e6e6e6;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
+    color: rgba(0,0,0,.8);
+    cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+    -webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+    font-size: 12px;
+    font-size: 1.4rem;
+    line-height: 1;
+    padding: 1.12em 1.5em 1em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    border-color: #ccc #bbb #aaa #bbb;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 15px 17px rgba(255,255,255,0.8), inset 0 -5px 12px rgba(0,0,0,0.02);
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+    border-color: #aaa #bbb #bbb #bbb;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+    -moz-box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,0.5), inset 0 2px 5px rgba(0,0,0,0.15);
+}
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+    padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+    -webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+    box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+    -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+    border: 0;
+    padding: 0;
+}
+input[type=text],
+input[type=email],
+textarea {
+    color: #666;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+    color: #111;
+}
+input[type=text],
+input[type=email] {
+    padding: 3px;
+}
+textarea {
+    overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+    padding-left: 3px;
+    vertical-align: top; /* Improves readability and alignment in all browsers */
+    width: 98%;
+}
+ 
+/* Links */
+a {
+    color: royalblue;
+}
+a:visited {
+    color: purple;
+}
+a:hover,
+a:focus,
 a:active {
-	outline: 0;
+    color: midnightblue;
+}
+/* Alignment */
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+ 
+/* Text meant only for screen readers */
+.assistive-text {
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
 }
 
-a img {
-	border: 0;
+/**
+ * 3.0 - Header
+ */
+	 /**
+	 * 3.1 - Navigation Bar/Buttons
+	 */
+.site-navigation {
+	width: 100%;
+	height: 75px;
+	position: absolute;
+	top: 0;
+}
+.menu-left-container,
+.menu-right-container{
+	float: left;
+    width: calc(50% - 75px);
+    height: 100%;
+}
+.menu-right-container{
+	float: right;
+}
+.menu-left-container{
+	float: left;
+}
+#menu-right li,
+#menu-left li {
+    padding: 20px 35px 25px 35px;
+    margin: 5px 5px 0 5px;
+    border-bottom: black 2px solid;
+    background:#bfb1b1;
+}
+#menu-right li a,
+#menu-left li a {
+	font-family: Lato,Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    line-height: 22px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 11px;
+    color:black;
+    text-decoration: none;
+}
+#menu-right li{
+	float: left;
+}
+#menu-left li {
+	float: right;
+}
+	/**
+	 * 3.2 - Logo
+	 */
+.site-logo-wrapper{
+	float:left;
+	width: 150px;
+	height: 100%;
+	background:red;
+}
+.site-logo-wrapper img{
+	width: 100%;
+	height: 100%;	
+}
+	/**
+	 * 3.3 - Banner
+	 */
+.site-banner{
+	width: 1280px;
+    height: 928px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.site-banner img{
+    width: 100%;
+    height: 100%;
+}
+/**
+ * 4.0 - Content
+ */
+
+.site-content	{
+	width: 1200px;
+    background: #7d7474;
+    min-height: 650px;
+    margin-top: 400px;
+    overflow: hidden;
+    margin: 0 auto 0 auto;
+}
+.main-content {
+	width: 650px;
+	margin: 10px 0 0 10px;
+    float: left;
+}
+.widged-area {
+    float: right;
+    width: 450px;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    border: black 1px solid;
+    min-height: 650px;
+}
+
+.entry-wrapper,
+.first-entry-wrapper	{
+	float: left;
+    width: 100%;
+    border: black 1px solid;
+    padding: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.entry-wrapper{
+    height: 150px;
+    overflow: hidden;
+}
+.entry-meta	{
+	width: 100px;
+    background-color: #2c2c2c;
+    margin: 5px;
+    height: 75px;
+    position: absolute;
+    top: 5px;
+}
+.entry-meta span {
+	width: 100%;
+    float: left;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+}
+.entry-fetured-image {
+	float: left;
+}
+.entry-featured-image img{		
+	width: 100%;
+}
+.entry-title	{
+	width: 100%;
+    float: left;
+    height: 75px;
+    padding: 22px 0; 
+}
+
+.entry-title h1 {
+	font-size: 26px;
+    display: block;
+    font-weight: 700;
+    text-align: center;
+}
+.widget-title	{
+	width: 100%;
+    float: left;
+    background: #251f1f;
+    height: 35px;
+    color: white;
+    text-align: center;
+}
+.widget-title h1 {
+	color: white;
+    text-align: center;
 }
