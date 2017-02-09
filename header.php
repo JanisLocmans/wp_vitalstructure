@@ -24,26 +24,57 @@
 				 
 				// Add a page number if necessary:
 				if ( $paged >= 2 || $page >= 2 )
-				echo ' | ' . sprintf( __( 'Page %s', 'shape' ), max( $paged, $page ) );
+				echo ' | ' . sprintf( __( 'Page %s', 'vital' ), max( $paged, $page ) );
 				 
 			?>
 		</title>
 		
 		<?php wp_head(); ?>
 	</head>
- 
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
-	   	  <header id="masthead" class="site-header" role="banner">
-				<hgroup>
-				     <h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				     <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				</hgroup>
-				<nav role="navigation" class="site-navigation main-navigation">
-			     	<h1 class="assistive-text"><?php _e( 'Menu', 'shape' ); ?></h1>
-			     	<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'shape' ); ?>"><?php _e( 'Skip to content', 'shape' ); ?></a></div>
-		 	    	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-				</nav><!-- .site-navigation .main-navigation -->
-			</header><!-- #masthead .site-header -->
-		<div id="main" class="site-main">
+
+		<!--Main Header Start-->
+		   	<header id="main-header" class="site-header" role="mainheader">
+
+		   		<!--Navigatoion Start-->
+					<nav id="primary-navigation" class="site-navigation" role="navigation"> 
+				    	<?php wp_nav_menu( array( 'theme_location' => 'left', 'menu_class' => 'nav-menu' ) ); ?>
+				    			<!--Logo Start-->
+									<?php if ( get_theme_mod( 'vital_logo' ) ) : ?>
+			    						<div class='site-logo-wrapper'>
+									        <a href='<?php echo esc_url( home_url( '/' ) ); ?>' 
+									       		title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' 
+									        	rel='home'>
+									        	
+										      	<img src='<?php echo esc_url( get_theme_mod( 'vital_logo' ) ); ?>'
+										        	alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+									        </a>
+									    </div>
+									<?php else : ?>
+									    	<div class='site-logo-wrapper'>
+									        <a href='<?php echo esc_url( home_url( '/' ) ); ?>' 
+									       		title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' 
+									        	rel='home'>
+									        <img src=''
+									        	alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+									        </a>
+									    </div>
+									<?php endif; ?>
+								<!--Logo End-->
+				   		<?php wp_nav_menu( array( 'theme_location' => 'right', 'menu_class' => 'nav-menu' ) ); ?>
+				    </nav>
+			    <!--Navigatoion End-->
+
+			    <!--Banner Start-->
+				    <div id="primary-banner" class="site-banner" role="banner">
+						<img src='<?php echo esc_url( get_theme_mod( 'vital_banner' ) ); ?>'
+							 alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+				    </div>
+	 			<!--Banner End-->
+
+			</header>
+		<!--Main Header End-->
+
+	<div id="main" class="site-main">
 		
