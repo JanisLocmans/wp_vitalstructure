@@ -7,11 +7,9 @@
  
 
     
-	<?php if( $wp_query->current_post == 0 && !is_paged() ) : ?> 
-		<article class='first-entry-wrapper'> <!--Output for first post-->
-	<?php else : ?>
-		<article class='entry-wrapper'>	<!--Output for other posts-->
-	<?php endif; ?>
+	
+		<article class='entry-wrapper'>	<!--Entry wrapper-->
+	
 		
 			<div class='entry-featured-image'>
 				<?php the_post_thumbnail('entry-banner');?>
@@ -30,7 +28,11 @@
 				</span>
 			
 				<div class='entry-content'>
-					<?php the_content(); ?>
+				<?php if( $wp_query->current_post == 0 && !is_paged() ) : ?>
+					<?php the_content(); ?> 
+				<?php else : ?>
+					<p><?php echo excerpt(25); ?></p>
+				<?php endif; ?>
 				</div>
 			
 		</article>

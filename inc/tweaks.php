@@ -49,3 +49,16 @@ function vital_enhanced_image_navigation( $url, $id ) {
     return $url;
 }
 add_filter( 'attachment_link', 'vital_enhanced_image_navigation', 10, 2 );
+
+function excerpt($limit) {
+    $post = get_post();
+    $excerpt = explode(' ', get_the_excerpt(), $limit);
+      if (count($excerpt)>=$limit) {
+        array_pop($excerpt);
+        $excerpt = implode(" ",$excerpt).'...';
+      } else {
+        $excerpt = implode(" ",$excerpt);
+      } 
+      $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt . '... <a href="'. get_permalink($post->ID) . '">Read More</a>.');
+      return $excerpt;
+}
