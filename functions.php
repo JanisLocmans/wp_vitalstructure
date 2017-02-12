@@ -22,6 +22,7 @@ function enque_files() {
                         array(), 
                         null, 
                         true );
+    wp_enqueue_style('fa_css', get_stylesheet_directory_uri() . '/inc/font-awesome-4.7.0/css/font-awesome.min.css' );
 }
 add_action('wp_enqueue_scripts', 'enque_files');
 /**
@@ -57,7 +58,7 @@ function vital_setup() {
     /**
      * Enable support for the Aside Post Format
      */
-    add_theme_support( 'post-formats', array( 'aside' ) );
+    add_theme_support( 'post-formats', array( 'fullwidth' ) );
     /**
      * This theme uses wp_nav_menu() in one location.
      */

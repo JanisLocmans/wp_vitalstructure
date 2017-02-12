@@ -303,9 +303,11 @@ textarea {
 /* Links */
 a {
     color: royalblue;
+    text-decoration:none;
 }
 a:visited {
     color: purple;
+    text-decoration:none;
 }
 a:hover,
 a:focus,
@@ -346,6 +348,7 @@ a:active {
 	width: 100%;
 	position: absolute;
 	top: 0;
+    background:rgba(74, 74, 74, 0.9);
 }
 .menu-left-container,
 .menu-right-container {
@@ -353,25 +356,28 @@ a:active {
     width: calc(50% - 100px);
     height: 100%;
 }
+.menu-left-container{
+    float: left;
+}
 .menu-right-container{
 	float: right;
-}
-.menu-left-container{
-	float: left;
 }
 #menu-left,
 #menu-right {
     margin: 0;
+    height: 100%
 }
-#menu-right li,
-#menu-left li {
+#menu-left li,
+#menu-right li {
     padding: 20px 35px 25px 35px;
     margin: 5px 5px 0 5px;
-    border-bottom: black 2px solid;
+}
+#menu-left li:hover,
+#menu-right li:hover {
     background:#bfb1b1;
 }
-#menu-right li a,
-#menu-left li a {
+#menu-left li a,
+#menu-right li a {
 	font-family: Lato,Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     line-height: 22px;
@@ -392,10 +398,10 @@ a:active {
 	 * 3.2 - Logo
 	 */
 .site-logo-wrapper{
-	float:left;
-	width: 200px;
-	height: 100%;
-	background:red;
+	position: absolute;
+    top: 0;
+    left: calc(50% - 100px);
+    width: 200px;
 }
 .site-logo-wrapper img{
 	width: 100%;
@@ -434,7 +440,6 @@ a:active {
 .entry-wrapper {
 	float: left;
     width: 100%;
-    padding: 5px 0;
     margin-bottom: 10px;
     position: relative;
     background: #c2afaf;
@@ -442,17 +447,18 @@ a:active {
 .entry-meta	{
 	width: 100px;
     background-color: #2c2c2c;
-    margin: 5px;
-    height: 75px;
     position: absolute;
     top: 5px;
+    left: 5px;
+    padding: 10px;
 }
 .entry-meta span {
 	width: 100%;
     float: left;
     text-align: center;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: 600;
 }
 .entry-fetured-image {
 	float: left;
@@ -463,15 +469,26 @@ a:active {
 .entry-title	{
 	width: 100%;
     float: left;
-    height: 75px;
-    padding: 22px 0; 
+    padding: 10px 0; 
 }
 
 .entry-title h1 {
-	font-size: 26px;
+	font-size: 24px;
     display: block;
     font-weight: 700;
-    text-align: center;
+    text-align: left;
+    margin-left: 20px;
+
+}
+.entry-content p {
+    margin: 0px 20px 20px 20px;
+}
+.post-divider {
+    margin: 30px 0px 30px 0px;
+    height: 1px;
+    background: black;
+    float:left;
+    width: 100%;
 }
 /**
 *	5.0 Widget Area

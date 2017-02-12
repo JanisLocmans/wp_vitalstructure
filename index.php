@@ -22,9 +22,11 @@ get_header();?>
 
 			        		get_template_part( 'content', get_post_format() );
 
-			        endif;
+			        endif;?>
 
-			    endwhile;
+			        <div class='post-divider'></div>
+
+			    <?php endwhile;
 
 			    else :
 
