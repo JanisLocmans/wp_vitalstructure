@@ -13,7 +13,7 @@
 			<header>
 					<div class='entry-featured-image'>
 						<?php the_post_thumbnail('entry-banner');?>
-							<div class='entry-meta'>
+							<div class='post-date'>
 						<?php vital_post_date(); ?>
 							</div>
 					</div>
@@ -33,23 +33,19 @@
 					<?php if( $wp_query->current_post == 0 && !is_paged() ) : ?>
 						<?php the_content(); ?> 
 					<?php else : ?>
-						<p><?php echo excerpt(50); ?></p>
+						<?php the_content(); ?> 
+						<!--<p><?php echo excerpt(50); ?></p> -->
 					<?php endif; ?>
 			</section>
 
 			<footer class='entry-footer'>
 					<?php if( $wp_query->current_post == 0 && !is_paged() ) : ?>
-
+						<span class='entry-info'> <?php vital_post_meta(); ?> </span>
 					<?php else : ?>
-						
-						<?php vital_post_meta(); ?>
+						<span class='entry-info'> <?php vital_post_meta(); ?> </span>
 						<a class='read-more' href="'. get_permalink($post->ID) . '">Read More</a>
-
 					<?php endif; ?>
-			</footer>
-
-
-			
+			</footer>			
 		</article>
 
 		
