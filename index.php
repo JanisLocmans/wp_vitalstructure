@@ -26,9 +26,12 @@ get_header();?>
 
 			        <div class='post-divider'></div>
 
-			    <?php endwhile;
+			    <?php endwhile; ?>
 
-			    else :
+			    	<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+					<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+
+			    <?php else :
 
 			    	get_template_part( 'no-results', 'index' );
 

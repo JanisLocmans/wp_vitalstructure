@@ -14,12 +14,19 @@ Text Domain: vitalstructure
 
 /**
  * 1.0 - Reset
- * 2.0 - Rebuild
+ * 2.0 - Rebuild CSS
  * 3.0 - Header
  *		3.1 - Navigation Bar/Buttons
  *		3.2 - Logo
  *		3.3 - Banner
  * 4.0 - Content
+ * 5.0 - Widget Area
+ * 5.1 - Main Widget Area
+ * 5.2 - Widget Searchform
+ */
+
+/**
+ * 1.0 - Reset
  */
 
 html, body, div, span, applet, object, iframe,
@@ -517,9 +524,12 @@ a:active {
 /**
 *	5.0 Widget Area
 */
+
+/**
+*   5.1 Main Widget Area
+*/
 .widget-title	{
 	width: 100%;
-    float: left;
     background: #251f1f;
     height: 35px;
     color: white;
@@ -541,14 +551,28 @@ a:active {
     margin-right: 10px;
     padding: 5px;
 }
+/**
+*   5.1 Main Widget Area End
+*/
 
+/**
+*   5.2 Widget Searchform
+*/
+
+.searchform div {
+    position:relative;
+}
+.searchform .fa-3x {
+    position: absolute;
+    font-size: 40px;
+    margin: 3px 0px 0px 4px;
+}
 .searchform #s {
     width: 200px;
     color: #333;
     cursor: text;
     padding: 14px 15px 15px 45px;
     background-color: #f1f1f1;
-    background-image: url(./inc/img/search.png);
     background-position: center left;
     background-repeat: no-repeat;
     background-size: contain;
@@ -565,3 +589,25 @@ a:active {
     border-radius: 0;
     border: none;
 }
+
+/**
+*   5.2 Widget Searchform End
+*/
+
+/**
+*   5.3 Widget Archive
+*/
+.widget_archives ul {
+    margin: 0;
+}
+
+
+.widget_archive li {
+    padding: 15px 0px 0px 0;
+    border-top: black 1px solid;
+    margin: 5px 40px 0px 40px;
+}
+
+/**
+*   5.3 Widget Archive End
+*/
