@@ -38,8 +38,12 @@
 		   	<header id="main-header" class="site-header" role="mainheader">
 
 		   		<!--Navigatoion Start-->
-					<nav id="primary-navigation" class="site-navigation" role="navigation"> 
-				    	<?php wp_nav_menu( array( 'theme_location' => 'left', 'menu_class' => 'nav-menu' ) ); ?>
+					<nav id="primary-navigation" class="site-navigation" role="navigation">
+						<div class="menu-left-container"> 		
+				    		<?php wp_nav_menu( array( 'theme_location' => 'left',  
+				    								  'menu_id' => 'menu-left',
+				    								  'menu_class' => 'nav-menu' ) ); ?>
+				    			</div>
 				    			<!--Logo Start-->
 									<?php if ( get_theme_mod( 'vital_logo' ) ) : ?>
 			    						<div class='site-logo-wrapper'>
@@ -62,7 +66,11 @@
 									    </div>
 									<?php endif; ?>
 								<!--Logo End-->
-				   		<?php wp_nav_menu( array( 'theme_location' => 'right', 'menu_class' => 'nav-menu' ) ); ?>
+						<div class="menu-left-container"> 
+				   				<?php wp_nav_menu( array( 'theme_location' => 'right',  
+				    								  'menu_id' => 'menu-right',
+				    								  'menu_class' => 'nav-menu' ) ); ?>
+				   		</div>
 				    </nav>
 			    <!--Navigatoion End-->
 

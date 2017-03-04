@@ -43,6 +43,7 @@ function vital_setup() {
     require( get_template_directory() . '/inc/template-tags.php' );
     require( get_template_directory() . '/inc/tweaks.php' );
     require( get_template_directory() . '/inc/customizer.php' );
+    require( get_template_directory() . '/inc/vital_widget_manager.php' );
  
     /**
      * Make theme available for translation
@@ -101,3 +102,5 @@ function widget_area_init() {
     ) );
 }
 add_action( 'widgets_init', 'widget_area_init' );
+
+
