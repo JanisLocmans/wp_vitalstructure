@@ -6,30 +6,22 @@
 get_header();?>
 	<div id="content" class="site-content" role="main">
 		<div id="primary" class="main-content">	    
-	    	<?php if ( have_posts() ) : 
+			<?php if ( have_posts() ) : ?>
 
-				while ( have_posts() ) : the_post(); 
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-    				if ( is_search() ) : 
+					<?php
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
+					?>
 
-			          		get_template_part( 'search', get_post_format() ); 
+				<?php endwhile; ?>
 
-			        	elseif ( is_archive() ) :
-
-			         		get_template_part( 'archive', get_post_format() );
-
-			        	else :
-
-			        		get_template_part( 'content', get_post_format() );
-
-			        endif;?>
-
-			        <div class='post-divider'></div>
-
-			    <?php endwhile; ?>
-
-			    	<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
-					<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+			    	<?php shape_content_nav( 'nav-below' ); ?>
 
 			    <?php else :
 

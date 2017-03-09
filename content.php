@@ -3,16 +3,16 @@
  * @package VitalStructure
  * @since VitalStructure 1.0
  */
-?>
- 
-
-    
-	
-		<article class='entry-wrapper'>	<!--Entry wrapper-->
+?>	
+		<article id='post-<?php the_ID(); ?>' class='entry-wrapper'>	<!--Entry wrapper-->
 	
 			<header>
 					<div class='entry-featured-image'>
-						<?php the_post_thumbnail('entry-banner');?>
+					<?php if ( has_post_thumbnail() ) : ?>
+   						<?php the_post_thumbnail('entry-banner'); ?>
+					<?php else : ?>
+						<img src="<?php bloginfo('template_url'); ?>/inc/img/placeholder.jpg">
+					<?php endif; ?>
 							<div class='post-date'>
 						<?php vital_post_date(); ?>
 							</div>
@@ -31,10 +31,12 @@
 
 			<section class='entry-content'>		
 					<?php if( $wp_query->current_post == 0 && !is_paged() ) : ?>
-						<?php the_content(); ?> 
+						<p><?php// echo excerpt(125); ?></p>
+						<?php the_content(); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'shape' ), 'after' => '</div>' ) ); ?>
 					<?php else : ?>
-						<?php the_content(); ?> 
-						<!--<p><?php echo excerpt(50); ?></p> -->
+						<p><?php echo excerpt(50); ?></p>
+
 					<?php endif; ?>
 			</section>
 
@@ -43,9 +45,9 @@
 						<span class='entry-info'> <?php vital_post_meta(); ?> </span>
 					<?php else : ?>
 						<span class='entry-info'> <?php vital_post_meta(); ?> </span>
-						<a class='read-more' href="'. get_permalink($post->ID) . '">Read More</a>
+						<a class='read-more' href='<?php the_permalink(); ?>'>Read More</a>
 					<?php endif; ?>
 			</footer>			
 		</article>
 
-		
+					        <div class='post-divider'></div>

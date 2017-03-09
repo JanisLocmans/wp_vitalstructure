@@ -72,7 +72,7 @@ function vital_setup() {
      */
 
     add_theme_support('post-thumbnails');
-    add_image_size('entry-banner', 650, 366, true);
+    add_image_size('entry-banner', 675, 380, true);
 
 }
 endif; // vital_setup

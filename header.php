@@ -38,7 +38,9 @@
 		   	<header id="main-header" class="site-header" role="mainheader">
 
 		   		<!--Navigatoion Start-->
-					<nav id="primary-navigation" class="site-navigation" role="navigation">
+
+		   			<!-- This shithole needs to be changed -->
+					<nav id="primary-menu" class="site-menu" role="menu">
 						<div class="menu-left-container"> 		
 				    		<?php wp_nav_menu( array( 'theme_location' => 'left',  
 				    								  'menu_id' => 'menu-left',
@@ -75,10 +77,21 @@
 			    <!--Navigatoion End-->
 
 			    <!--Banner Start-->
-				    <div id="primary-banner" class="site-banner" role="banner">
-						<img src='<?php echo esc_url( get_theme_mod( 'vital_banner' ) ); ?>'
-							 alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
-				    </div>
+			   		<?php  if(is_single()) : ?>
+
+					<?php if ( has_post_thumbnail() ) : ?>
+   						<?php the_post_thumbnail('entry-banner'); ?>
+					<?php else : ?>
+						<img src="<?php bloginfo('template_url'); ?>/inc/img/placeholder.jpg">
+					<?php endif; ?>
+
+					<?php else : ?>
+				    	<div id="primary-banner" class="site-banner" role="banner">
+							<img src='<?php echo esc_url( get_theme_mod( 'vital_banner' ) ); ?>'
+								 alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+				    	</div>
+
+				    <?php endif; ?>
 	 			<!--Banner End-->
 
 			</header>

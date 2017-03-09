@@ -13,8 +13,11 @@ $months = $wpdb->get_results(
 		foreach($months as $month) {
 			$year_current = $month->year;
 			$month_current = $month->month;
+
+				echo ('<p> mew' . $month_prev . '</p>');
+				echo ('<p> mew' . $month_current . '</p>');
 				if ($year_current != $year_prev){ 
-					if ($year_prev != null){}                             
+					if ($year_prev != null){ echo ('baap'); }                             
 						printf( __( 
 						'<li class="archive-year"> <a href=%1$s/%2$s/>%3$s </a></li>', 'vital' ),
 							esc_url( get_bloginfo('wpurl') ),
@@ -23,6 +26,10 @@ $months = $wpdb->get_results(
 						);    
 					}
 				if ($month_current != $month_prev) {
+					if ($month_prev != null){ echo ('boop'); }
+
+
+ 
 						printf( __( 
 						'<li><a href=" %1$s/%2$s/%3$s"> <span class="archive-month">%4$s</span></a></li>', 'vital' ),
 							esc_url( get_bloginfo('wpurl') ),
@@ -34,8 +41,13 @@ $months = $wpdb->get_results(
 
 				 echo ('<li>' . $month->post_title . '</li>');
 
-						?><a> <?php // echo $month->post_count; ?> </a><?php
+					//<a> <?php // echo $month->post_count;  </a><?php
+
+
 			$month_prev = $month_current;				
 			$year_prev = $year_current;
+
+			echo ('<p>' . $month_prev . '</p>');
+				 		echo ('<p>' . $month_current . '</p>');
 			if(++$limit >= 70) { break; }
 		} //endforeach; 
