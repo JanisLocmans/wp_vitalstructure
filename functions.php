@@ -64,8 +64,7 @@ function vital_setup() {
      * This theme uses wp_nav_menu() in one location.
      */
     register_nav_menus( array(
-       'Left' => __( 'Left', 'vital' ),
-        'Right' => __( 'right', 'vital' )
+       'main_menu' => __( 'main_menu', 'vital' ),
    	) );
     /**
      * add featured image support
@@ -73,7 +72,6 @@ function vital_setup() {
 
     add_theme_support('post-thumbnails');
     add_image_size('entry-banner', 675, 380, true);
-
 }
 endif; // vital_setup
 

@@ -352,82 +352,28 @@ a:active {
 	 /**
 	 * 3.1 - Menu Bar/Buttons
 	 */
-.site-menu {
-	width: 100%;
-	position: absolute;
-	top: 0;
-    background:rgba(74, 74, 74, 0.9);
-}
-.menu-left-container,
-.menu-right-container {
-	float: left;
-    width: calc(50% - 100px);
-    height: 100%;
-}
-.menu-left-container{
-    float: left;
-}
-.menu-right-container{
-	float: right;
-}
-#menu-left,
-#menu-right {
-    margin: 0;
-    height: 100%
-}
-#menu-left li,
-#menu-right li {
-    padding: 20px 35px 25px 35px;
-    margin: 5px 5px 0 5px;
-}
-#menu-left li:hover,
-#menu-right li:hover {
-    background:#bfb1b1;
-}
-#menu-left li a,
-#menu-right li a {
-	font-family: Lato,Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    line-height: 22px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 11px;
-    color:black;
-    text-decoration: none;
-}
-#menu-right li{
-	float: left;
-}
-#menu-left li {
-	float: right;
+.main-menu-wrapper {
+    position: absolute;
 }
 	/**
 	 * 3.2 - Logo
 	 */
 .site-logo-wrapper{
-	position: absolute;
-    top: 0;
-    left: calc(50% - 100px);
-    width: 200px;
+	text-align: center;
+    padding: 150px;
 }
 .site-logo-wrapper img{
-	width: 100%;
-	height: 100%;	
+	height: 200px;	
 }
 	/**
 	 * 3.3 - Banner
 	 */
 .site-banner{
-	width: 1280px;
-    height: 928px;
-    overflow: hidden;
+	width: 100%;
+    height: 500px;
     margin: 0 auto;
-}
-.site-banner img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 1920px;
+    min-width: 1200px;
 }
 /**
  * 4.0 - Content

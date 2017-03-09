@@ -40,13 +40,24 @@
 		   		<!--Navigatoion Start-->
 
 		   			<!-- This shithole needs to be changed -->
-					<nav id="primary-menu" class="site-menu" role="menu">
-						<div class="menu-left-container"> 		
-				    		<?php wp_nav_menu( array( 'theme_location' => 'left',  
-				    								  'menu_id' => 'menu-left',
-				    								  'menu_class' => 'nav-menu' ) ); ?>
-				    			</div>
-				    			<!--Logo Start-->
+					<nav id="primary-menu" class="main-menu-wrapper" role="menu">		
+				    	<?php wp_nav_menu( array( 'theme_location' => 'main_menu',  
+				    							'menu_class' => 'main_menu' ) ); ?>
+				    </nav>
+				 <!--Navigatoion End-->				    					   
+
+			    <!--Banner Start-->
+			   		<?php  if(is_single()) : ?>
+
+					<?php if ( has_post_thumbnail() ) : ?>
+   						<?php the_post_thumbnail('entry-banner'); ?>
+					<?php else : ?>
+						<img src="<?php bloginfo('template_url'); ?>/inc/img/placeholder.jpg">
+					<?php endif; ?>
+
+					<?php else : ?>
+				    	<div id="primary-banner" class="site-banner" role="banner" style="background: #00ff00 url(<?php echo esc_url( get_theme_mod( 'vital_banner' ) ); ?>) no-repeat no-repeat top;">
+						<!--Logo Start-->
 									<?php if ( get_theme_mod( 'vital_logo' ) ) : ?>
 			    						<div class='site-logo-wrapper'>
 									        <a href='<?php echo esc_url( home_url( '/' ) ); ?>' 
@@ -67,28 +78,7 @@
 									        </a>
 									    </div>
 									<?php endif; ?>
-								<!--Logo End-->
-						<div class="menu-left-container"> 
-				   				<?php wp_nav_menu( array( 'theme_location' => 'right',  
-				    								  'menu_id' => 'menu-right',
-				    								  'menu_class' => 'nav-menu' ) ); ?>
-				   		</div>
-				    </nav>
-			    <!--Navigatoion End-->
-
-			    <!--Banner Start-->
-			   		<?php  if(is_single()) : ?>
-
-					<?php if ( has_post_thumbnail() ) : ?>
-   						<?php the_post_thumbnail('entry-banner'); ?>
-					<?php else : ?>
-						<img src="<?php bloginfo('template_url'); ?>/inc/img/placeholder.jpg">
-					<?php endif; ?>
-
-					<?php else : ?>
-				    	<div id="primary-banner" class="site-banner" role="banner">
-							<img src='<?php echo esc_url( get_theme_mod( 'vital_banner' ) ); ?>'
-								 alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+								<!--Logo End-->			 
 				    	</div>
 
 				    <?php endif; ?>
