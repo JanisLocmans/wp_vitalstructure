@@ -5,6 +5,9 @@
  */
 get_header();?>
 	<div id="content" class="site-content" role="main">
+		<div id="blog-title-id" class="blog-title">
+			<H1><?php vital_blog_title(); ?></H1>
+		</div>
 		<div id="primary" class="main-content">	    
 			<?php if ( have_posts() ) : ?>
 
@@ -21,7 +24,7 @@ get_header();?>
 
 				<?php endwhile; ?>
 
-			    	<?php shape_content_nav( 'nav-below' ); ?>
+			    	<?php vital_nav( 'nav-below' ); ?>
 
 			    <?php else :
 

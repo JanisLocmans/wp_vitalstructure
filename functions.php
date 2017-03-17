@@ -18,10 +18,7 @@ add_action( 'after_setup_theme', 'vital_setup' );
 
 function enque_files() {    
     wp_enqueue_style('style', get_stylesheet_uri() );
-    wp_enqueue_script( 'script_js', get_template_directory_uri() . '/inc/js/scripts.js', 
-                        array(), 
-                        null, 
-                        true );
+    wp_enqueue_script( 'vital_main_js', get_template_directory_uri() . '/inc/js/vital_main.js', array(), null, true );
     wp_enqueue_style('fa_css', get_stylesheet_directory_uri() . '/inc/font-awesome-4.7.0/css/font-awesome.min.css' );
 }
 add_action('wp_enqueue_scripts', 'enque_files');
@@ -71,7 +68,7 @@ function vital_setup() {
      */
 
     add_theme_support('post-thumbnails');
-    add_image_size('entry-banner', 675, 380, true);
+    add_image_size('entry-banner', 848, 480, true);
 }
 endif; // vital_setup
 

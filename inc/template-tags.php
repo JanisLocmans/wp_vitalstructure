@@ -44,13 +44,13 @@ function vital_post_meta() {
 endif;
 
 
-if ( ! function_exists( 'shape_content_nav' ) ):
+if ( ! function_exists( 'vital_nav' ) ):
 /**
  * Display navigation to next/previous pages when applicable
  *
- * @since Shape 1.0
+ * @since VitalStructure 1.0
  */
-function shape_content_nav( $nav_id ) {
+function vital_nav( $nav_id ) {
     global $wp_query, $post;
  
     // Don't print empty markup on single pages if there's nowhere to navigate.
@@ -94,4 +94,45 @@ function shape_content_nav( $nav_id ) {
     </nav><!-- #<?php echo $nav_id; ?> -->
     <?php
 }
-endif; // shape_content_nav
+endif;
+
+
+/**
+ * Displays Current Page Title
+ *
+ * @since Vital 1.0
+ *
+ */
+function vital_blog_title() {
+  if (is_home()) {
+    if (get_option('page_for_posts', true)) {
+      echo get_the_title(get_option('page_for_posts', true));
+    } else {
+      _e('Blog', 'vital');
+    }
+  } elseif (is_archive()) {
+    $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+    if ($term) {
+      echo $term->name;
+    } elseif (is_post_type_archive()) {
+      echo get_queried_object()->labels->name;
+    } elseif (is_day()) {
+      printf(__('Daily Archives: %s', 'vital'), get_the_date());
+    } elseif (is_month()) {
+      printf(__('Monthly Archives: %s', 'vital'), get_the_date('F Y'));
+    } elseif (is_year()) {
+      printf(__('Yearly Archives: %s', 'vital'), get_the_date('Y'));
+    } elseif (is_author()) {
+      $author = get_queried_object();
+      printf(__('Author Archives: %s', 'vital'), $author->display_name);
+    } else {
+      single_cat_title();
+    }
+  } elseif (is_search()) {
+    printf(__('Search Results for %s', 'vital'), get_search_query());
+  } elseif (is_404()) {
+    _e('Not Found', 'vital');
+  } else {
+    the_title();
+  }
+}
