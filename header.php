@@ -31,32 +31,26 @@
 		
 		<?php wp_head(); ?>
 	</head>
-<body <?php body_class(); ?>>
+<?php echo '<body class="'.join(' ', get_body_class()).'">'.PHP_EOL; ?>
 	<div id="page" class="hfeed site">
 
 		<!--Main Header Start-->
-		   	<header id="main-header" class="site-header" role="mainheader">
+		   	<header id="main-header" class="vital-main-header" role="mainheader">
 
 		   		<!--Navigatoion Start-->
 
-		   			<!-- This shithole needs to be changed -->
-					<nav id="primary-menu" class="main-menu-wrapper" role="menu">		
+					<nav id="primary-menu" class="main-menu-wrapper js_primary_menu" role="menu">
+						<button id='js_menu_button' class='c-hamburger c-hamburger--htla'>
+	  						<span></span>
+						</button>		
 				    	<?php wp_nav_menu( array( 'theme_location' => 'main_menu',  
-				    							'menu_class' => 'main_menu' ) ); ?>
+				    							'menu_class' => 'main-menu' ) ); ?>
+				    		
 				    </nav>
 				 <!--Navigatoion End-->				    					   
 
 			    <!--Banner Start-->
-			   		<?php  if(is_single()) : ?>
-
-					<?php if ( has_post_thumbnail() ) : ?>
-   						<?php the_post_thumbnail('entry-banner'); ?>
-					<?php else : ?>
-						<img src="<?php bloginfo('template_url'); ?>/inc/img/placeholder.jpg">
-					<?php endif; ?>
-
-					<?php else : ?>
-				    	<div id="primary-banner" class="site-banner" role="banner" style="background: #00ff00 url(<?php echo esc_url( get_theme_mod( 'vital_banner' ) ); ?>) no-repeat no-repeat top;">
+				    	<div id="primary-banner" class="site-banner" role="banner" style="background: url(<?php echo esc_url( get_theme_mod( 'vital_banner' ) ); ?>) no-repeat no-repeat center; background-size: cover;">
 						<!--Logo Start-->
 									<?php if ( get_theme_mod( 'vital_logo' ) ) : ?>
 			    						<div class='site-logo-wrapper'>
@@ -68,24 +62,12 @@
 										        	alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
 									        </a>
 									    </div>
-									<?php else : ?>
-									    	<div class='site-logo-wrapper'>
-									        <a href='<?php echo esc_url( home_url( '/' ) ); ?>' 
-									       		title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' 
-									        	rel='home'>
-									        <img src=''
-									        	alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
-									        </a>
-									    </div>
 									<?php endif; ?>
 								<!--Logo End-->			 
 				    	</div>
-
-				    <?php endif; ?>
 	 			<!--Banner End-->
 
 			</header>
 		<!--Main Header End-->
 
 	<div id="main" class="site-main">
-		

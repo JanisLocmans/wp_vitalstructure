@@ -19,10 +19,10 @@
             <?php get_search_form(); ?>
         </aside>
  
-        <aside id="archives" class="widget widget_archive">
+        <aside id="archives" class="widget vital_widget_archives">
             <div class="widget-title"><h2><?php _e( 'Archives', 'vital' ); ?></h2></div>
             <ul>
-                <?php wp_get_archives( array( 'type' => 'yearly' ) ); ?>
+                <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
             </ul>
         </aside>
 

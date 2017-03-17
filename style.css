@@ -22,8 +22,11 @@ Version: 1.0
  *		3.3 - Banner
  * 4.0 - Content
  * 5.0 - Widget Area
- * 5.1 - Main Widget Area
- * 5.2 - Widget Searchform
+ *      5.1 - Main Widget Area
+ *      5.2 - Widget Searchform
+ *      5.3 - Widget Archive
+ * x.0 - Misc/Temp Styles
+ *      x.1 - Hamburger Button
  */
 
 /**
@@ -97,9 +100,11 @@ a:active { /* Improves readability when focused and also mouse hovered in all br
 a img {
     border: 0;
 }
+
 /**
  * 2.0 - Rebuild CSS
  */
+
 body,
 button,
 input,
@@ -310,17 +315,17 @@ textarea {
  
 /* Links */
 a {
-    color: royalblue;
+    color: black;
     text-decoration:none;
 }
 a:visited {
-    color: purple;
+    color: grey;
     text-decoration:none;
 }
 a:hover,
 a:focus,
 a:active {
-    color: midnightblue;
+    color: lightblue;
 }
 /* Alignment */
 .alignleft {
@@ -345,59 +350,113 @@ a:active {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
 }
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+    max-width: 100%;
+    height: auto;
+}
 
 /**
  * 3.0 - Header
  */
+
+.vital-main-header {
+    height: 100%;
+}
+
 	 /**
 	 * 3.1 - Menu Bar/Buttons
 	 */
+
 .main-menu-wrapper {
-    position: absolute;
+    position: fixed;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    top: 0;
+    width: 125px;
+    left:-125px;
+    border-right: 5px green solid;
 }
+.menu-is-active {
+   left:0;
+}
+.main-menu ul {
+    margin: 32px 0 0 0;
+}
+.main-menu li {
+    padding: 10px 0px 10px 10px;
+    margin: 0 0 0px 0;
+}
+.main-menu li:hover {
+    background-color: lightblue;
+}
+.main-menu a {
+    display:block;
+}
+
 	/**
 	 * 3.2 - Logo
 	 */
+
 .site-logo-wrapper{
 	text-align: center;
-    padding: 150px;
+    padding-top:25px;
 }
 .site-logo-wrapper img{
 	height: 200px;	
 }
+
 	/**
 	 * 3.3 - Banner
 	 */
+
 .site-banner{
 	width: 100%;
     height: 500px;
     margin: 0 auto;
     max-width: 1920px;
     min-width: 1200px;
+    border-bottom: 25px black solid;
 }
-/**
- * 4.0 - Content
- */
+
+    /**
+     * 4.0 - Content
+     */
 
 .site-content	{
-	width: 1200px;
-    background: #7d7474;
+	max-width: 1280px;
     min-height: 650px;
     margin-top: 400px;
     overflow: hidden;
     margin: 0 auto 0 auto;
 }
+.blog-title {
+    background: #251f1f;
+    padding: 30px 20px 30px 30px;
+    margin: 0 0 30px 0;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: white;
+}
 .main-content {
-	width: 675px;
-	margin: 10px 0 0 10px;
+	width: 848px;
+    margin: 0;
     float: left;
+    margin-left:25px;
 }
 .entry-wrapper {
 	float: left;
     width: 100%;
     margin-bottom: 10px;
     position: relative;
-    background: #c2afaf;
+}
+.vital-entry-header{
+    overflow:hidden;
 }
 .post-date {
 	width: 100px;
@@ -415,8 +474,7 @@ a:active {
     font-size: 20px;
     font-weight: 600;
 }
-.entry-fetured-image {
-	float: left;
+.entry-featured-image {
 }
 .entry-featured-image img{		
 	width: 100%;
@@ -428,33 +486,40 @@ a:active {
 }
 
 .entry-title h1 {
-	font-size: 24px;
+	font-size: 26px;
     display: block;
     font-weight: 700;
-    text-align: left;
-    margin-left: 20px;
-
+    text-align: center;
+    border-bottom: 1px White solid;
+    margin: 0 100px;
 }
-.entry-content p {
-    margin: 0px 20px 20px 20px;
+.entry-content{
+    margin: 35px;
+    text-align: center;
+    color: grey;
+}
+.entry-content p{
+    margin: 0px;
 }
 .entry-footer{
-    background: whitesmoke;
     overflow: hidden;
-    float: left;
     clear: both;
     width: 100%;
 }
 .entry-info {
     float: left;
-    padding: 20px;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
 }
 .read-more {
-    float: right;
     padding: 10px;
-    margin: 10px;
     background: black;
     color: white;
+    width: 78%;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
 }
 
 .read-more:hover {
@@ -462,20 +527,19 @@ a:active {
     color: black;
 }
 
-.post-divider {
-    margin: 30px 0px 30px 0px;
-    height: 1px;
-    background: black;
-    float:left;
-    width: 100%;
-}
-/**
-*	5.0 Widget Area
-*/
+    /**
+    *	5.0 Widget Area
+    */
 
-/**
-*   5.1 Main Widget Area
-*/
+    /**
+    *   5.1 Main Widget Area
+    */
+
+.widget-area-wrapper {
+    float: right;
+    width: 365px;
+    margin-right: 25px;
+}
 .widget-title	{
 	width: 100%;
     background: #251f1f;
@@ -489,23 +553,18 @@ a:active {
 }
 .widget {
     padding: 5px;
-    background: #c2afaf;
-    margin: 10px;
+    margin: 0 0 25px 10px;
+    float: left;
+    width: 100%;
 }
-.widget-area-wrapper {
-    float: right;
-    width: 475px;
-    margin-top: 10px;
-    margin-right: 10px;
-    padding: 5px;
-}
-/**
-*   5.1 Main Widget Area End
-*/
 
-/**
-*   5.2 Widget Searchform
-*/
+    /**
+    *   5.1 Main Widget Area End
+    */
+
+    /**
+    *   5.2 Widget Searchform
+    */
 
 .searchform div {
     position:relative;
@@ -538,24 +597,145 @@ a:active {
     border: none;
 }
 
-/**
-*   5.2 Widget Searchform End
-*/
+    /**
+    *   5.2 Widget Searchform End
+    */
 
-/**
-*   5.3 Widget Archive
-*/
-.widget_archives ul {
+    /**
+    *   5.3 Widget Archive
+    */
+.vital_widget_archives ul {
     margin: 0;
 }
 
 
-.widget_archive li {
+.vital_widget_archives li {
     padding: 15px 0px 0px 0;
-    border-top: black 1px solid;
-    margin: 5px 40px 0px 40px;
+    margin: 5px 0 5px 0;
+    width: 100%;
+}
+.vital_widget_archives a{
+    margin: 0px 40px;
+    text-align: center;
+    color: white;
+    border-bottom: 1px white solid;
+    display: block;
 }
 
+    /**
+    *   5.3 Widget Archive End
+    */
+
 /**
-*   5.3 Widget Archive End
+*   x.0 Misc/Temp Styles Start
 */
+
+    /**
+    *   x.1 Hamburger Button
+    */
+
+.c-hamburger {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    top:32px;
+    left: 125px;
+}
+
+.c-hamburger:focus {
+  outline: none;
+}
+
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 9px;
+  right: 9px;
+  height: 4px;
+  background: white;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  content: "";
+}
+
+.c-hamburger span::before {
+  top: -10px;
+}
+
+.c-hamburger span::after {
+  bottom: -10px;
+}
+
+.c-hamburger--htla {
+  background-color: #008000;
+}
+
+.c-hamburger--htla span {
+  transition: transform 0.3s;
+}
+
+.c-hamburger--htla span::before {
+  transform-origin: top right;
+  transition: transform 0.3s, width 0.3s, top 0.3s;
+}
+
+.c-hamburger--htla span::after {
+  transform-origin: bottom right;
+  transition: transform 0.3s, width 0.3s, bottom 0.3s;
+}
+
+/* active state, i.e. menu open */
+.c-hamburger--htla.is-active {
+  background-color: #008000;
+}
+
+.c-hamburger--htla.is-active span {
+  transform: rotate(180deg);
+}
+
+.c-hamburger--htla.is-active span::before,
+.c-hamburger--htla.is-active span::after {
+  width: 50%;
+}
+
+.c-hamburger--htla.is-active span::before {
+  top: 0;
+  transform: translateX(19px) translateY(2px) rotate(45deg);
+}
+
+.c-hamburger--htla.is-active span::after {
+  bottom: 0;
+  transform: translateX(19px) translateY(-2px) rotate(-45deg);
+}
+    /**
+    *   x.1 Hamburger Button End
+    */
+
+
+div#page {
+    background: rgba(0, 0, 0, 0.9);
+    position: relative;
+    width: 100%;
+}
+
+

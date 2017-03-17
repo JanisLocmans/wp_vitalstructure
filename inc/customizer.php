@@ -29,6 +29,7 @@ function vital_theme_customizer( $wp_customize ) {
     'label'    => __( 'Banner', 'vital' ),
     'section'  => 'vital_banner_section',
     'settings' => 'vital_banner',
+    'description' => __( 'Select the image to be used for Home Top Background.', 'theme-slug' )
     ) ) );
 
 
