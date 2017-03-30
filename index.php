@@ -5,9 +5,11 @@
  */
 get_header();?>
 	<div id="content" class="site-content" role="main">
+
 		<div id="blog-title-id" class="blog-title">
 			<H1><?php vital_blog_title(); ?></H1>
 		</div>
+
 		<div id="primary" class="main-content">	    
 			<?php if ( have_posts() ) : ?>
 
@@ -22,13 +24,17 @@ get_header();?>
 						get_template_part( 'content', get_post_format() );
 					?>
 
+					<div class='post-seperator'>
+						<span></span>
+					</div>
+
 				<?php endwhile; ?>
 
 			    	<?php vital_nav( 'nav-below' ); ?>
 
-			    <?php else :
+			<?php else :
 
-			    	get_template_part( 'no-results', 'index' );
+			    get_template_part( 'no-results', 'index' );
 
 			endif; 
 			wp_reset_postdata(); // reset the query ?>	    

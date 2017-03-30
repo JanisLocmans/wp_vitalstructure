@@ -25,6 +25,7 @@ Version: 1.0
  *      5.1 - Main Widget Area
  *      5.2 - Widget Searchform
  *      5.3 - Widget Archive
+ *      5.3.1 Vital Widget Archive
  * x.0 - Misc/Temp Styles
  *      x.1 - Hamburger Button
  */
@@ -312,20 +313,25 @@ textarea {
     vertical-align: top; /* Improves readability and alignment in all browsers */
     width: 98%;
 }
+body{
+    width: 100%;
+    min-width: 1280px;
+    margin: 0 auto;
+}
  
 /* Links */
 a {
-    color: black;
+    color: #fff;
     text-decoration:none;
 }
 a:visited {
-    color: grey;
+    color: #fff;
     text-decoration:none;
 }
 a:hover,
 a:focus,
 a:active {
-    color: lightblue;
+    color: #fff;
 }
 /* Alignment */
 .alignleft {
@@ -378,11 +384,11 @@ a:active {
     z-index: 1;
     top: 0;
     width: 125px;
-    left:-125px;
+    left: -125px;
     border-right: 5px green solid;
 }
-.menu-is-active {
-   left:0;
+.main-menu-wrapper.is-active {
+   left: 0;
 }
 .main-menu ul {
     margin: 32px 0 0 0;
@@ -420,7 +426,7 @@ a:active {
     margin: 0 auto;
     max-width: 1920px;
     min-width: 1200px;
-    border-bottom: 25px black solid;
+    border-bottom: 15px #090909 solid;
 }
 
     /**
@@ -435,56 +441,53 @@ a:active {
     margin: 0 auto 0 auto;
 }
 .blog-title {
-    background: #251f1f;
-    padding: 30px 20px 30px 30px;
-    margin: 0 0 30px 0;
+    background: #3c3c3c;
+    padding: 15px 0;
+    margin: 0;
+    border-bottom: 15px #090909 solid;
     font-size: 26px;
     text-align: center;
     letter-spacing: 5px;
     color: white;
 }
 .main-content {
-	width: 848px;
-    margin: 0;
+	width: 900px;
     float: left;
-    margin-left:25px;
 }
 .entry-wrapper {
 	float: left;
     width: 100%;
-    margin-bottom: 10px;
     position: relative;
+    background: #212121;
+    padding: 45px 0;
 }
 .vital-entry-header{
     overflow:hidden;
 }
 .post-date {
-	width: 100px;
-    background-color: #2c2c2c;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    padding: 10px;
+	padding: 10px;
+    display: block;
+    margin: 5px 100px;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 1px white solid;
 }
 .post-date span {
-	width: 100%;
-    float: left;
     text-align: center;
     color: white;
-    font-size: 20px;
-    font-weight: 600;
 }
 .entry-featured-image {
+    padding:0 45px;
 }
-.entry-featured-image img{		
-	width: 100%;
+.entry-featured-image img{
+    width: 100%;       	
+	height:auto;
 }
 .entry-title {
 	width: 100%;
     float: left;
     padding: 10px 0; 
 }
-
 .entry-title h1 {
 	font-size: 26px;
     display: block;
@@ -494,17 +497,52 @@ a:active {
     margin: 0 100px;
 }
 .entry-content{
-    margin: 35px;
+    margin: 35px 100px;
     text-align: center;
-    color: grey;
+    color: white;
 }
 .entry-content p{
     margin: 0px;
+}
+.entry-content-single {
+    width: 90%;
+    margin: 0 auto;
+    color: white;
 }
 .entry-footer{
     overflow: hidden;
     clear: both;
     width: 100%;
+}
+.post-navigation{
+    width: 100%;
+    float: left;
+    background: #212121;
+    border-top: 1px solid black;
+}
+.post-navigation .nav-previous, 
+.post-navigation .nav-next {
+    width: 435px;
+    font-size: 26px;
+    background: #2d2d2d;
+}
+
+.post-navigation .nav-previous a, 
+.post-navigation .nav-next a{
+    display: block;
+    padding: 40px 0;
+}
+.post-navigation .nav-previous {
+    text-align: left;
+    float: left;
+    border-left: 10px #000 solid;
+    border-right: 1px #000 solid;
+}
+.post-navigation .nav-next {
+    text-align: right;
+    float: right;
+    border-right: 10px #000 solid;
+    border-left: 1px #000 solid;
 }
 .entry-info {
     float: left;
@@ -527,6 +565,18 @@ a:active {
     color: black;
 }
 
+.post-seperator {
+    float: left;
+    width: 100%;
+    padding: 25px 0;
+}
+.post-seperator span {
+    display: block;
+    height: 1px;
+    background: white;
+    margin: 0 25px;
+}
+
     /**
     *	5.0 Widget Area
     */
@@ -535,14 +585,19 @@ a:active {
     *   5.1 Main Widget Area
     */
 
-.widget-area-wrapper {
-    float: right;
-    width: 365px;
-    margin-right: 25px;
+.vital_widget-wrapper {
+    z-index: 1;
+    width: 378px;
+    float: left;
+    background: #212121;
+    border-left: 1px black solid;
+}
+.vital_widget-wrapper.is-active {
+    right:0px;       
 }
 .widget-title	{
 	width: 100%;
-    background: #251f1f;
+    background: #3c3c3c;
     height: 35px;
     color: white;
     text-align: center;
@@ -552,8 +607,7 @@ a:active {
     text-align: center;
 }
 .widget {
-    padding: 5px;
-    margin: 0 0 25px 10px;
+    padding: 5px 0;
     float: left;
     width: 100%;
 }
@@ -604,27 +658,52 @@ a:active {
     /**
     *   5.3 Widget Archive
     */
-.vital_widget_archives ul {
+.widget_archive ul {
     margin: 0;
 }
 
 
-.vital_widget_archives li {
+.widget_archive li {
     padding: 15px 0px 0px 0;
     margin: 5px 0 5px 0;
     width: 100%;
 }
-.vital_widget_archives a{
+.widget_archive a{
     margin: 0px 40px;
     text-align: center;
     color: white;
     border-bottom: 1px white solid;
     display: block;
 }
+    /**
+    *   5.3.1 Vital Widget Archive
+    */
+.archive_year_wrapper {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 20px;
+    overflow: hidden;
+}
+.archive_year_wrapper.is-active {
+    height: 100%;
+}
+.archive_year_wrapper a{
+    display: block;
+    width: 100%;
+}
+
+.archive_year_wrapper a:hover {
+    background: blue;
+}
 
     /**
-    *   5.3 Widget Archive End
+    *   5.3.1 Vital Widget Archive End
     */
+
+/**
+*   5.3 Widget Archive End
+*/
 
 /**
 *   x.0 Misc/Temp Styles Start
@@ -633,8 +712,16 @@ a:active {
     /**
     *   x.1 Hamburger Button
     */
-
-.c-hamburger {
+.c-hamburger-menu{
+    top:32px;
+    left: 125px;
+}
+.c-hamburger-side {
+    top: 32px;
+    right: 300px;
+}
+.c-hamburger-menu,
+.c-hamburger-side {
     display: block;
     position: absolute;
     overflow: hidden;
@@ -649,15 +736,15 @@ a:active {
     border: none;
     cursor: pointer;
     transition: background 0.3s;
-    top:32px;
-    left: 125px;
 }
 
-.c-hamburger:focus {
+.c-hamburger-menu:focus,
+.c-hamburger-side:focus {
   outline: none;
 }
 
-.c-hamburger span {
+.c-hamburger-menu span,
+.c-hamburger-side span {
   display: block;
   position: absolute;
   top: 22px;
@@ -667,8 +754,10 @@ a:active {
   background: white;
 }
 
-.c-hamburger span::before,
-.c-hamburger span::after {
+.c-hamburger-menu span::before,
+.c-hamburger-menu span::after,
+.c-hamburger-side span::before,
+.c-hamburger-side span::after {
   position: absolute;
   display: block;
   left: 0;
@@ -678,11 +767,13 @@ a:active {
   content: "";
 }
 
-.c-hamburger span::before {
+.c-hamburger-menu span::before,
+.c-hamburger-side span::before {
   top: -10px;
 }
 
-.c-hamburger span::after {
+.c-hamburger-menu span::after,
+.c-hamburger-side span::after  {
   bottom: -10px;
 }
 
@@ -727,7 +818,54 @@ a:active {
   bottom: 0;
   transform: translateX(19px) translateY(-2px) rotate(-45deg);
 }
-    /**
+
+.c-hamburger--htx {
+  background-color: #ff3264;
+}
+
+.c-hamburger--htx span {
+  transition: background 0s 0.3s;
+}
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+
+.c-hamburger--htx span::before {
+  transition-property: top, transform;
+}
+
+.c-hamburger--htx span::after {
+  transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.c-hamburger--htx.is-active {
+  background-color: #cb0032;
+}
+
+.c-hamburger--htx.is-active span {
+  background: none;
+}
+
+.c-hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.c-hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+  transition-delay: 0s, 0.3s;
+}
+
+  /**
     *   x.1 Hamburger Button End
     */
 
@@ -739,3 +877,24 @@ div#page {
 }
 
 
+/*.widget-area-wrapper {
+    float: right;
+    margin-right: 25px;
+    position: absolute;
+    width: 100%;
+}
+.widget {
+    background: #ab9f9f;
+}
+
+
+https://codemyui.com/tag/hover-animation/page/6/?_=1490197552252
+https://designschool.canva.com/blog/website-color-schemes/
+https://blizzcon.com/en-gb/news/20626034
+
+
+#1A1A1A
+#707070
+#607625
+#878787
+#832F24

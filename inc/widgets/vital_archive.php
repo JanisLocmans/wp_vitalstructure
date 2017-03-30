@@ -4,14 +4,14 @@
  * @package VitalStructure 
  * @since VitalStructure 1.0
  */
-class Vital_Archive_Widget extends WP_Widget {
+class Vital_Archive extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'vital_archive_widget', // Base ID
+			'vital_archive', // Base ID
 			esc_html__( 'Vital Structure Custome Archive', 'text_domain' ), // Name
 			array( 'description' => esc_html__( 'Custom archive widget created for this themes desing', 'text_domain' ), ) // Args
 		);

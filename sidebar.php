@@ -10,7 +10,10 @@
 
 
 
-<aside id="secondary" class="widget-area-wrapper" role="complementary">
+<aside id="secondary" class="vital_widget-wrapper" role="complementary">
+    <!--<button class="c-hamburger-side c-hamburger--htx">
+      <span>toggle menu</span>
+    </button>-->
     <?php do_action( 'before_sidebar' ); ?>
     <!--Default sidebar content-->
     <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
@@ -19,7 +22,7 @@
             <?php get_search_form(); ?>
         </aside>
  
-        <aside id="archives" class="widget vital_widget_archives">
+        <aside id="archives" class="widget widget_archive">
             <div class="widget-title"><h2><?php _e( 'Archives', 'vital' ); ?></h2></div>
             <ul>
                 <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>

@@ -72,7 +72,7 @@ function vital_nav( $nav_id ) {
  
     ?>
     <nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-        <h1 class="assistive-text"><?php _e( 'Post navigation', 'shape' ); ?></h1>
+        <h1 class="assistive-text"><?php _e( 'Post navigation', 'vital' ); ?></h1>
  
     <?php if ( is_single() ) : // navigation links for single posts ?>
  

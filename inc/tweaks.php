@@ -52,7 +52,7 @@ add_filter( 'attachment_link', 'vital_enhanced_image_navigation', 10, 2 );
 
 function excerpt($limit) {
     $post = get_post();
-    $excerpt = explode(' ', get_the_excerpt(), $limit);
+    $excerpt = explode(' ', get_the_content(), $limit);
       if (count($excerpt)>=$limit) {
         array_pop($excerpt);
         $excerpt = implode(" ",$excerpt).'....';

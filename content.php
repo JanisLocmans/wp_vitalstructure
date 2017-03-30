@@ -8,14 +8,11 @@
 	
 			<header class='vital-entry-header'>
 					<div class='entry-featured-image'>
-					<?php if ( has_post_thumbnail() ) : ?>
-   						<?php the_post_thumbnail('entry-banner'); ?>
-					<?php else : ?>
-						<img src="<?php bloginfo('template_url'); ?>/inc/img/placeholder.jpg">
-					<?php endif; ?>
-							<div class='post-date'>
-						<?php vital_post_date(); ?>
-							</div>
+						<?php if ( has_post_thumbnail() ) : ?>
+	   						<?php the_post_thumbnail('entry-banner'); ?>
+						<?php else : ?>
+							<img src="<?php bloginfo('template_url'); ?>/inc/img/placeholder.jpg">
+						<?php endif; ?>
 					</div>
 
 				<span class='entry-title'>
@@ -28,6 +25,10 @@
 				</span>
 
 				<span class='entry-info'> <?php vital_post_meta(); ?> </span>
+
+				<div class='post-date'>
+					<?php vital_post_date(); ?>
+				</div>
 
 			</header>
 

@@ -39,8 +39,8 @@
 
 		   		<!--Navigatoion Start-->
 
-					<nav id="primary-menu" class="main-menu-wrapper js_primary_menu" role="menu">
-						<button id='js_menu_button' class='c-hamburger c-hamburger--htla'>
+					<nav id="primary-menu" class="main-menu-wrapper" role="menu">
+						<button class='c-hamburger-menu c-hamburger--htla'>
 	  						<span></span>
 						</button>		
 				    	<?php wp_nav_menu( array( 'theme_location' => 'main_menu',  
